@@ -1,0 +1,31 @@
+.question {
+  display: flex;
+  gap: 10px;
+}
+.question:hover > .question-icons {
+  visibility: visible;
+}
+.question-icons {
+  visibility: collapse;
+  display: flex;
+}
+.question-icons > div {
+  /* border: 1px solid red; */
+  padding: 0 4px;
+  cursor: pointer;
+}
+.question-icons > div:hover {
+  opacity: 0.8;
+}
+
+/* change color according to difficulty */
+.easy {
+  color: rgb(149, 251, 219);
+}
+.medium {
+  color: rgb(254, 203, 78);
+}
+.hard {
+  color: rgb(222, 87, 101);
+}
+/* end | change color according to difficulty */

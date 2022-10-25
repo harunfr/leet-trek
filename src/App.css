@@ -1,0 +1,11 @@
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3rem;
+  background-color: var(--color-background);
+}
+.Lists {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
