@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/leet-trek/static/css/main.ae23cb53.css",
-    "main.js": "/leet-trek/static/js/main.1cb7915a.js",
+    "main.js": "/leet-trek/static/js/main.d974123e.js",
     "static/media/to_solved.svg": "/leet-trek/static/media/to_solved.bef6bab86a7d29ce7e71046f3c37ed66.svg",
     "static/media/to_examined.svg": "/leet-trek/static/media/to_examined.141a545413594d107819592aa5e8d653.svg",
     "static/media/to_examine.svg": "/leet-trek/static/media/to_examine.8ef3a906426aa3db5b0213b2e457a98c.svg",
     "index.html": "/leet-trek/index.html",
     "main.ae23cb53.css.map": "/leet-trek/static/css/main.ae23cb53.css.map",
-    "main.1cb7915a.js.map": "/leet-trek/static/js/main.1cb7915a.js.map"
+    "main.d974123e.js.map": "/leet-trek/static/js/main.d974123e.js.map"
   },
   "entrypoints": [
     "static/css/main.ae23cb53.css",
-    "static/js/main.1cb7915a.js"
+    "static/js/main.d974123e.js"
   ]
 }
