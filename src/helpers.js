@@ -11,14 +11,23 @@ export function getSlug(url) {
 
 export function getQuestionData(urlSlug, questionsData) {
   let questionData = {};
-  if (!urlSlug) {
-    return;
+
+  questionData = questionsData.find((question) => {
+    return question.urlSlug === urlSlug;
+  });
+
+  const localData = JSON.parse(localStorage.getItem("localQuestions"));
+  const isLocalQuestion = localData.some((question) => {
+    return question.urlSlug === urlSlug;
+  });
+
+  if (questionData && !isLocalQuestion) {
+    return questionData;
   } else {
-    questionData = questionsData.find((question) => {
-      return question.urlSlug === urlSlug;
-    });
+    console.log(
+      "You have already added this question before.\nOr this is bad input.\nExample input: https://leetcode.com/problems/two-sum/"
+    );
   }
-  return questionData;
 }
 
 export function addQuestionToLocal(questionData) {
@@ -26,17 +35,7 @@ export function addQuestionToLocal(questionData) {
     ...questionData,
     status: "inProgress",
   };
-
   let localData = JSON.parse(localStorage.getItem("localQuestions"));
-
-  // handle no localData
-  if (localData === null) {
-    localStorage.setItem("localQuestions", JSON.stringify([]));
-    console.log("local storage initialized...");
-    localData = [];
-  }
-
   localData.push(newQuestion);
-
   localStorage.setItem("localQuestions", JSON.stringify(localData));
 }

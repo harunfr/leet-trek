@@ -36,6 +36,8 @@ function App() {
           console.log("Fatal error! Look at App.js");
         }
       }
+    } else {
+      localStorage.setItem("localQuestions", JSON.stringify([]));
     }
     // @prettier-ignore
     setQuestions({ solved, examined, examineLater, inProgress });
@@ -51,16 +53,12 @@ function App() {
       .then((text) => {
         // console.log('Pasted content: ', text)
         const urlSlug = getSlug(text);
-        if (!urlSlug) {
-          return;
-        }
         const questionData = getQuestionData(urlSlug, questionsData);
-        // console.log(urlSlug);
-        // console.log(questionData)
-        addQuestionToLocal(questionData);
-
-        setIsLocalMutated(!isLocalMutated);
-        setInputValue("");
+        if (questionData) {
+          addQuestionToLocal(questionData);
+          setIsLocalMutated(!isLocalMutated);
+          setInputValue("");
+        }
       })
       .catch((err) => {
         console.error("Failed to read clipboard contents: ", err);
@@ -71,16 +69,12 @@ function App() {
     event.preventDefault();
 
     const urlSlug = getSlug(inputValue);
-    if (!urlSlug) {
-      return;
-    }
     const questionData = getQuestionData(urlSlug, questionsData);
-    // console.log(urlSlug);
-    // console.log(questionData)
-    addQuestionToLocal(questionData);
-
-    setIsLocalMutated(!isLocalMutated);
-    setInputValue("");
+    if (questionData) {
+      addQuestionToLocal(questionData);
+      setIsLocalMutated(!isLocalMutated);
+      setInputValue("");
+    }
   };
 
   const handleChangeStatusTo = (status, displayId) => {

@@ -1,5 +1,6 @@
 {
   "name": "track_leet",
+  "homepage": "https://harunfr.github.io/leet-trek/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
