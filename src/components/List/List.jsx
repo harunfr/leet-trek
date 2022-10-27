@@ -27,7 +27,7 @@ function List(props) {
         {questions?.map(({ urlSlug, displayId, difficulty, status }, idx) => {
           return (
             <Question
-              key={idx}
+              key={displayId}
               urlSlug={urlSlug}
               displayId={displayId}
               difficulty={difficulty}

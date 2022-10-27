@@ -12,8 +12,6 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [isLocalMutated, setIsLocalMutated] = useState(false);
 
-  // console.log(questions);
-
   useEffect(() => {
     const solved = [];
     const examined = [];
@@ -51,7 +49,6 @@ function App() {
     navigator.clipboard
       .readText()
       .then((text) => {
-        // console.log('Pasted content: ', text)
         const urlSlug = getSlug(text);
         const questionData = getQuestionData(urlSlug, questionsData);
         if (questionData) {
@@ -64,7 +61,7 @@ function App() {
         console.error("Failed to read clipboard contents: ", err);
       });
   };
-  // https://leetcode.com/problems/long-pressed-name/
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -78,16 +75,14 @@ function App() {
   };
 
   const handleChangeStatusTo = (status, displayId) => {
-    // console.log('handleChangeStatusTo invoked with parameter: '+ status + '\nand displayId: ' + displayId);
-    //
     const localData = JSON.parse(localStorage.getItem("localQuestions"));
-    // console.log(localData);
+
     const selectedQuestion = localData.find((question) => {
       return question.displayId === displayId;
     });
-    // console.log(selectedQuestion);
     selectedQuestion.status = status;
     localStorage.setItem("localQuestions", JSON.stringify(localData));
+
     setIsLocalMutated(!isLocalMutated);
   };
 
@@ -99,6 +94,7 @@ function App() {
       console.log("Drop local storage");
       localStorage.clear();
     }
+
     setIsLocalMutated(!isLocalMutated);
   };
 

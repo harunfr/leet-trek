@@ -15,10 +15,8 @@
   font-size: 24px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  /* font-family:Georgia, 'Times New Roman', Times, serif; */
   border-bottom: 1px solid var(--color-gray-100);
 }
 .questions {
-  /* border: 1px solid black; */
   border-top: none;
 }

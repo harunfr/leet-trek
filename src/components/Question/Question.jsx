@@ -8,7 +8,7 @@ const leetBaseUrl = "https://leetcode.com/problems/";
 
 function Question(props) {
   const { urlSlug, displayId, difficulty, status, changeStatusTo } = props;
-  // console.log(urlSlug)
+
   const title =
     displayId +
     " " +
@@ -67,13 +67,3 @@ function Question(props) {
 }
 
 export default Question;
-/*
-onClick={() => changeStatusTo('solved')}
-onClick={() => changeStatusTo('examined')}
-onClick={() => changeStatusTo('examineLater')}
-onClick={() => changeStatusTo('inProgress')}
-<AddToExaminedIcon height={20} width={20}/>
-
-
-
-*/
